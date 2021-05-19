@@ -2,7 +2,17 @@
 // member of the array, and returns a new array with that member removed.
 // For example, `remove(['Cadence', 'Ordel', 'Marion'], 'Marion')` results
 // in `['Cadence', 'Ordel']`.
-//
+
+function remove(people, member) {
+    let newArray = []
+    for (let i = 0; i < people.length; i++) {
+        if (people[i] !== member) {
+            newArray.push(people[i])
+        }
+    } return newArray
+}
+
+
 // If the potential member is not in the array, return the array unchanged.
 // If the potential member is in the array, remove all instances of it from the array.
 
@@ -12,13 +22,64 @@
 // 3. Create a function called "sum" that takes an array of numbers and
 // returns the sum of those numbers.
 
+function sum(arrayOfNumbers) {
+    let arraySum = 0
+    for (let number of arrayOfNumbers){
+        arraySum += number
+    } return arraySum
+}
+
 // 4. Create a function called "average" that takes an array of numbers
 // and returns the average of those numbers.
+
+function average(arrayOfNumbers) {
+    let arraySum = 0
+    let arrayLength = arrayOfNumbers.length
+    
+    for (let number of arrayOfNumbers){
+        arraySum += number
+    }
+    if (arrayOfNumbers.length === 0) {
+        return undefined
+    } else
+        return arraySum / arrayLength
+}
+
 
 // 5. Create a function called "minimum" that takes an array of numbers and
 // returns the smallest number in that array.
 
-// 6. There are many techniques to sort arrays in programming. Your programming
+function minimum(arrayOfNumbers) {
+    let minVal = arrayOfNumbers.reduce(function (current, number) {
+        if (number < current) {
+            return number
+        }   else {
+            return current
+        }
+    })
+    return minVal
+}
+
+// function minimum(arrayOfNumbers) {
+//     let minVal = Math.min(...arrayOfNumbers)
+//     return minVal
+// }
+
+// function minimum(arrayOfNumbers){
+//     let arrayMin = Math.min(arrayOfNumbers)
+//     if (arrayOfNumbers.length === 0) {
+//         return undefined
+//     } else
+//         return arrayMin
+// }
+
+// function minimum(arrayOfNumbers) {
+//         let minValue = arrayOfNumbers.reduce{
+//                 Math.min
+//         } return minValue
+//     }
+
+        // 6. There are many techniques to sort arrays in programming. Your programming
 // language will likely include the ability to do this. We are going to
 // implement sorting ourselves, however.
 //
